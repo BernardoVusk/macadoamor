@@ -1,0 +1,6 @@
+{
+  "name": "Guia Maçã de Vidro",
+  "description": "Página de vendas móvel de alta conversão para o Guia Prático de Maçãs de Vidro e Gourmet.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
