@@ -11,11 +11,11 @@ import ProfitCalculator from './components/ProfitCalculator';
 import CheckoutModal from './components/CheckoutModal';
 import { TestimonialChat } from './types';
 
-// Concrete assets from image generations
-const macaChocolate = '/src/assets/images/maca_chocolate_1779986474320.png';
-const macaGourmet = '/src/assets/images/maca_gourmet_1779986494468.png';
-const macaVidroSaco = '/src/assets/images/maca_vidro_sac_1779986521415.png';
-const macaTabuleiro = '/src/assets/images/maca_tabuleir_1779986554058.png';
+// Import assets directly so Vite bundles and resolves them natively in production
+import macaChocolate from './assets/images/maca_chocolate_1779986474320.png';
+import macaGourmet from './assets/images/maca_gourmet_1779986494468.png';
+import macaVidroSaco from './assets/images/maca_vidro_sac_1779986521415.png';
+import macaTabuleiro from './assets/images/maca_tabuleir_1779986554058.png';
 
 // Testimonials data exactly copying screen transcripts
 const mockChats: TestimonialChat[] = [
