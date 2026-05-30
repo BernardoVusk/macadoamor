@@ -122,7 +122,7 @@ export default function App() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
 
   const openCheckout = () => {
-    window.location.href = "https://pay.lowify.com.br/checkout?product_id=IUkbKv";
+    window.location.href = "https://pay.wiapy.com/2EDYsJCncG";
   };
 
   // Content for the mobile scrolling container - Rendered identically to the user's screenshots
