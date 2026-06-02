@@ -181,16 +181,6 @@ export default function App() {
           </div>
         </div>
 
-        {/* Massive Conversion Touch Green Button */}
-        <button
-          id="hero-cta-button"
-          onClick={openCheckout}
-          className="btn-vibrate mt-8 w-full max-w-xs sm:max-w-sm bg-[#10b981] hover:bg-[#059669] text-white py-5 px-6 rounded-2xl font-black text-center transition-all duration-300 select-none cursor-pointer outline-none active:scale-95 flex flex-col items-center justify-center shadow-lg"
-        >
-          <span className="text-sm sm:text-base tracking-wide">QUERO APRENDER E LUCRAR HOJE</span>
-          <span className="text-xs opacity-90 font-normal mt-0.5">Acesso vitalício instantâneo</span>
-        </button>
-
         {/* Dual Side-by-Side Apples Product Images */}
         <div className="grid grid-cols-2 gap-4 mt-10 w-full max-w-xs sm:max-w-sm">
           <div className="overflow-hidden rounded-2xl shadow-xl border-2 border-red-400 bg-white aspect-[3/4] hover:scale-[1.02] transition duration-350">
@@ -420,25 +410,8 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#f4f7f6] text-gray-800 flex flex-col font-sans relative overflow-x-hidden antialiased">
       {/* Center container to keep mobile-first scale beautiful on desktop, and native fluid content on phone */}
-      <div className="w-full max-w-md mx-auto bg-white shadow-xl min-h-screen flex flex-col relative pb-20 md:pb-0">
+      <div className="w-full max-w-md mx-auto bg-white shadow-xl min-h-screen flex flex-col relative">
         {renderLanderContent()}
-      </div>
-
-      {/* Sticky Bottom Floating Conversion Bar for Mobile (hidden on desktop screens where layout is large) */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-150 p-3.5 flex items-center justify-between z-40 shadow-xl select-none">
-        <div className="leading-tight">
-          <p className="text-[10px] text-[#cc1111] font-black uppercase tracking-wider">Oferta Liberada</p>
-          <p className="text-base font-black text-emerald-600">
-            R$ 12,90 <span className="text-gray-400 font-normal text-xs line-through">R$ 67</span>
-          </p>
-        </div>
-        <button
-          onClick={openCheckout}
-          className="bg-[#10b981] hover:bg-[#059669] text-white font-black text-xs px-5 py-3 rounded-2xl cursor-pointer shadow-md select-none transition duration-150 active:scale-95 flex items-center gap-1"
-        >
-          <span>QUERO APRENDER AGORA!</span>
-          <ChevronRight className="w-4 h-4 text-emerald-100 stroke-[2.5]" />
-        </button>
       </div>
 
       {/* Interactive Checkout Modal Overlay Dialog */}
