@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Phone, Video, ArrowLeft, CheckCheck, Smile, Send, Paperclip, Camera, Mic } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { TestimonialChat } from '../types';
@@ -9,10 +9,26 @@ interface WhatsAppChatProps {
 
 export default function WhatsAppChat({ chatData }: WhatsAppChatProps) {
   const [activeChatIndex, setActiveChatIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const activeChat = chatData[activeChatIndex];
 
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setActiveChatIndex((prev) => (prev + 1) % chatData.length);
+    }, 6500);
+
+    return () => clearInterval(interval);
+  }, [activeChatIndex, isPaused, chatData.length]);
+
   return (
-    <div className="w-full bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden" id="wa-mockup">
+    <div 
+      className="w-full bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden" 
+      id="wa-mockup"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       {/* Tab Switcher */}
       <div className="flex bg-gray-50 border-b border-gray-100 p-2 overflow-x-auto gap-2 no-scrollbar">
         {chatData.map((chat, idx) => (
@@ -20,19 +36,35 @@ export default function WhatsAppChat({ chatData }: WhatsAppChatProps) {
             key={chat.studentName}
             id={`tab-aluna-${idx}`}
             onClick={() => setActiveChatIndex(idx)}
-            className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-semibold transition-all duration-300 whitespace-nowrap outline-none cursor-pointer ${
+            className={`flex flex-col items-stretch px-3 py-2 rounded-xl text-sm font-semibold transition-all duration-300 whitespace-nowrap outline-none cursor-pointer relative overflow-hidden ${
               activeChatIndex === idx
                 ? 'bg-emerald-600 text-white shadow-md shadow-emerald-600/10'
                 : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
             }`}
           >
-            <img
-              src={chat.avatarUrl}
-              alt={chat.studentName}
-              className="w-6 h-6 rounded-full object-cover border border-emerald-100"
-              referrerPolicy="no-referrer"
-            />
-            <span>{chat.studentName}</span>
+            <div className="flex items-center gap-2">
+              <img
+                src={chat.avatarUrl}
+                alt={chat.studentName}
+                className="w-6 h-6 rounded-full object-cover border border-emerald-100"
+                referrerPolicy="no-referrer"
+              />
+              <span>{chat.studentName}</span>
+            </div>
+            
+            {/* Elegant visual timer progress bar for the active tab */}
+            {activeChatIndex === idx && !isPaused && (
+              <motion.div 
+                className="absolute bottom-0 left-0 h-[3px] bg-white opacity-60"
+                initial={{ width: '0%' }}
+                animate={{ width: '100%' }}
+                transition={{ duration: 6.5, ease: 'linear' }}
+                key={`progress-${idx}`}
+              />
+            )}
+            {activeChatIndex === idx && isPaused && (
+              <div className="absolute bottom-0 left-0 h-[3px] bg-white/40 w-full animate-pulse" />
+            )}
           </button>
         ))}
       </div>
