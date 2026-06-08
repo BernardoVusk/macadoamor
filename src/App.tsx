@@ -21,11 +21,11 @@ import UpgradeModal from './components/UpgradeModal';
 import { TestimonialChat } from './types';
 
 // Import image assets
-import macaVermelhaClassica from './assets/images/maca_vermelha_classica_1780706545196.png';
-import macaVermelhaGourmet from './assets/images/maca_vermelha_gourmet_1780706558274.png';
-import macaVermelhaEmbalagem from './assets/images/maca_vermelha_embalagem_1780706570904.png';
-import macaVermelhaTabuleiro from './assets/images/maca_vermelha_tabuleiro_1780706583039.png';
-import macaCaixaProducao from './assets/images/maca_caixa_producao_1780707367505.png';
+import macaVermelhaClassica from './assets/images/maca_vermelha_classica_1780706545196.webp';
+import macaVermelhaGourmet from './assets/images/maca_vermelha_gourmet_1780706558274.webp';
+import macaVermelhaEmbalagem from './assets/images/maca_vermelha_embalagem_1780706570904.webp';
+import macaVermelhaTabuleiro from './assets/images/maca_vermelha_tabuleiro_1780706583039.webp';
+import macaCaixaProducao from './assets/images/maca_caixa_producao_1780707367505.webp';
 
 // Testimonials copy exactly matched with Section 7
 const mockChats: TestimonialChat[] = [
