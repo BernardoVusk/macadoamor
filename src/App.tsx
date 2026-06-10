@@ -135,15 +135,15 @@ export default function App() {
   const [isUpgradeModalOpen, setIsUpgradeModalOpen] = useState(false);
 
   const openEssencialCheckout = () => {
-    window.location.href = "https://orlacheckout.shop/checkout/fmy93blx?utm_source=organic&utm_campaign=&utm_medium=&utm_content=&utm_term=";
+    window.location.href = "https://pay.wiapy.com/2EDYsJCncG";
   };
 
   const openComboCheckout = () => {
-    window.location.href = "https://orlacheckout.shop/checkout/gweoknb5?utm_source=organic&utm_campaign=&utm_medium=&utm_content=&utm_term=";
+    window.location.href = "https://pay.wiapy.com/Kkzoauw6M";
   };
 
   const openUpgradeDiscountCheckout = () => {
-    window.location.href = "https://orlacheckout.shop/checkout/zdivfth0?utm_source=organic&utm_campaign=&utm_medium=&utm_content=&utm_term=";
+    window.location.href = "https://pay.wiapy.com/758m6pj-F";
   };
 
   const scrollToOffer = () => {
